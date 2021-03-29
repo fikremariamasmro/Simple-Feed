@@ -35,9 +35,8 @@ class _FeedListScreenState extends State<FeedListScreen> {
                   itemBuilder: (BuildContext context, int index) {
                     return index >= state.feedlist.length
                         ? LoadingIndicator()
-                        : BlocProvider.value(
-                            value: _feedBloc,
-                            child: FeedCard(feedModel: state.feedlist[index]),
+                        : FeedCard(
+                            feedModel: state.feedlist[index],
                           );
                   },
                   controller: _scrollController,
